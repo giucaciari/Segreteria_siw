@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments/base.html::headerfiles">
+        <link rel="stylesheet" href="../static/css/form.css">
+    </head>
+
+    <body>
+        <img class="card-img" th:src="@{https://source.unsplash.com/random/1920x1100/?university}" >
+        <div class="container card-img-overlay">
+            <div class=" text-center mt-5 ">
+        
+                <h1 >Inserimento Prenotazione</h1>
+            </div>
+        
+        
+        <div class="row ">
+          <div class="col-lg-7 mx-auto">
+            <div class="card mt-2 mx-auto p-4 bg-light">
+                <div class="card-body bg-light">
+           
+                <div class = "container">
+                <form id="contact-form" role="form" th:action="@{'/prenotazioneUpdate' + '/' + ${prenotazione.id}}" method="POST" th:object="${prenotazione}">
+                    <div th:if="${#fields.hasGlobalErrors()}">
+                        <p th:each="err : ${#fields.globalErrors()}" th:text="${err}">Errore Globale</p>
+                    </div>
+                
+        
+                <div class="controls">
+        
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_name">Nome *</label>
+                                <input id="form_name" type="text" name="name" class="form-control" placeholder="Inserisci il nome della prenotazione *" required="required" th:field="*{nome}" >
+                                <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+                            </div>
+                        </div>
+                    <div class="row">
+        
+        
+                        <div class="col-md-12">
+                            
+                            <input type="submit" class="btn btn-success btn-send  pt-2 btn-block" value="Submit Prenotazione" >
+                        
+                    </div>
+              
+                    </div>
+        
+        
+            </div>
+             </form>
+            </div>
+                </div>
+        
+        
+        </div>
+            <!-- /.8 -->
+        
+        </div>
+        <!-- /.row-->
+        
+        </div>
+        </div>
+    </body>
+</html>

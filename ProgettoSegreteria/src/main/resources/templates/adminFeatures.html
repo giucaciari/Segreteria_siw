@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="fragments/base.html::headerfiles"></head>
+    <body>
+        <header th:replace="fragments/base.html::intestazione"></header>
+        <div class="d-flex align-items-center justify-content-center mt-3">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header"><h5>  Operazioni Studenti</h5></div>
+                <div class="card-body">
+                    <p class="card-text">Gestione di aggiunta e modifica di studente</p>
+                    <a class="btn btn-outline  my-2 my-sm-0 active mt-3" style="background-color:#4bbdda;" th:href="@{/admin/studenteForm}" >
+                        Aggiungi uno Studente!
+                    </a>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" th:each="studente : ${elencoStudenti}" >  
+                            <div>
+                                <div >
+                                   
+                                    <div>
+                                        <h3 class="card-text" th:text="${studente.nome} +' '+ ${studente.cognome}"><strong>Studente</strong></h3>
+                                        <div class="d-grid gap-2 mx-auto justify-content-center">
+                                            <a class="card-link btn btn-block btn-warning m-1" role="button" th:href="@{/admin/updateStudente(studId=${studente.id})}">
+                                                Modifica Studente
+                                            </a>
+                                        </div>
+                                       <div>
+                                            <a class="card-link btn btn-danger btn-block m-1" role="button" th:href="@{/deletestudente(studId=${studente.id})}">
+                                                Elimina Studente
+                                            </a>
+                                       </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            
+                    </li>
+                </ul>
+                
+            </div>
+            <div class="card" style="width: 18rem;">
+            <div class="card-header"><h5> Operazioni Prenotazioni</h5></div>
+            <div class="card-body">
+                <p class="card-text">Gestione di aggiunta e modifica di prenotazioni</p>
+                <a class="btn btn-outline  my-2 my-sm-0 active mt-3" style="background-color:#4bbdda;" th:href="@{/admin/prenotazioneForm}" >
+                     Aggiungi una Prenotazione!
+                </a>
+                    
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" th:each="prenotazione : ${elencoPrenotazioni}" >  
+                        <div>
+                            <div >
+                                   
+                                <div>
+                                    <h3 class="card-text" th:text="${prenotazione.nome}"><strong>Prenotazioni</strong></h3>
+                                    <div class="d-grid gap-2 mx-auto justify-content-center">
+                                        <a class="card-link btn btn-block btn-warning m-1" role="button" th:href="@{/admin/updatePrenotazione(preId=${prenotazione.id})}">
+                                                Modifica Prenotazione
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a class="card-link btn btn-danger btn-block m-1" role="button" th:href="@{/deleteprenotazione(preId=${prenotazione.id})}">
+                                                Elimina Prenotazione
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            
+                </li>
+            </ul>
+                
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-header"><h5> Operazioni Certificati</h5></div>
+                <div class="card-body">
+                    <p class="card-text">Gestione di aggiunta e modifica dei certificati</p>
+                    <a class="btn btn-outline  my-2 my-sm-0 active mt-3" style="background-color:#4bbdda;" th:href="@{/admin/certificatoForm}" >
+                        Aggiungi un Certificato!
+                    </a>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" th:each="certificato : ${elencoCertificati}" >  
+                            <div>
+                                <div >
+                                   
+                                    <div>
+                                        <h3 class="card-text" th:text="${certificato.nome}"><strong>Certificato</strong></h3>
+                                        <div class="d-grid gap-2 mx-auto justify-content-center">
+                                            <a class="card-link btn btn-block btn-warning m-1" role="button" th:href="@{/admin/updateCertificato(certiId=${certificato.id})}">
+                                                Modifica Certificato
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a class="card-link btn btn-block btn-danger m-1" role="button" th:href="@{/deleteCertificato(certiId=${certificato.id})}">
+                                                Elimina Certificato
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                    </li>
+                </ul>
+                
+            </div>
+             <div class="card" style="width: 18rem;">
+                <div class="card-header"><h5> Operazioni Esami</h5></div>
+                <div class="card-body">
+                    <p class="card-text">Gestione di aggiunta e modifica di Esami</p>
+                    <a class="btn btn-outline  my-2 my-sm-0 active mt-3" style="background-color:#4bbdda;" th:href="@{/admin/esameForm}" >
+                        Aggiungi un Esame!
+                    </a>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" th:each="esame : ${elencoEsami}" >  
+                            <div>
+                                <div >
+                                   
+                                    <div>
+                                        <h3 class="card-text" th:text="${esame.nome}"><strong>Esame</strong></h3>
+                                        <div class="d-grid gap-2 mx-auto justify-content-center">
+                                            <a class="card-link btn btn-block btn-warning m-1 " role="button" th:href="@{/admin/updateEsame(esameId=${esame.id})}">
+                                                Modifica Esame
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a class="card-link btn btn-danger btn-block m-1" role="button" th:href="@{/deleteEsame(esameId=${esame.id})}">
+                                                Elimina Esame
+                                            </a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+            
+           
+           
+        
+        
+       
+        
+    </body>
+</html>

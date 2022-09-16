@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="fragments/base.html::headerfiles"></head>
+  <body>
+    <header th:replace="fragments/base.html::intestazione">
+    </header>
+    <img class="card-img" th:src="@{https://source.unsplash.com/random/1920x1100/?university}" >
+    <div class="card-img-overlay">
+      
+      <h2 class="mt-5" style="text-align: center;color: rgb(224, 134, 49);font-family: Courgette;">Certificatio Page</h2>
+
+    
+    <div class="jumbotron text-center" style="background-color:rgb(168, 181, 158,.7);">
+      <h1 class="display-4" style="color: rgb(0,0,0);text-transform: uppercase;" th:text="${certificato.nome}" >Welcome To My Website!</h1>
+      <p class="lead" style="color: rgb(0,0,0);" th:text="${certificato.descrizione}">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum necessitatibus perspiciatis cum vitae, modi hic?</p>
+      <hr>
+
+
+      <h3 class="d-flex justify-content-center" style="color: rgb(24, 23, 23) ;">Esame di questo Certificato:</h3>
+      <div class="card bg-light col-6 my-5 ml-3">
+        <div class="card-body d-flex flex-row align-items-center justify-content-between" th:if="${certificato.esame}" th:object="${certificato.esame}">
+            <div><h4 class=" d-inline">Pi: </h4><h4 class="d-inline" th:text="*{nome}">Piatto</h4></div>
+            <a href="esame.html" class ="link btn btn-success"
+            th:href="@{'/esame' + '/' + *{id}}">Dettagli</a>
+        </div>
+        <h4 th:unless="${certificato.esame}" class="p-3">Nessun esame assegnato</h4>
+    </div>
+      
+
+        
+
+    
+    </div>
+
+    <br>
+
+    
+    <footer th:replace="fragments/base.html::footer"></footer>
+  </div>
+    </div>
+    
+    
+</body>
+</html>

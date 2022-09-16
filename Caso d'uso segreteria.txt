@@ -1,0 +1,46 @@
+Progetto_SIW_Segreteria
+
+CASO D'USO 1 - Aggiunta di una Prenotazione 
+
+1)Amministratore accede al sistema tramite username e password
+2)Il Sistema mostra la pagina di default
+3)L'amministratore sceglie una operazione
+4)Il Sistema mostra le operazini
+5)L'amministratore sceglie di aggiungere una prenotazione
+6)L'amministratore inserisce il nome  della prenotazione
+7)Il Sistema mostra i possibili studenti a cui assegnare la prenotazione
+8)L'amministratore sceglie lo studente da assegnare
+9)Il Sistema mostra i dettagli della prenotazione creato
+10)L'amministratore prosegue nell'uso del sistema
+
+CASO D'USO 2 - Modifica di un Buffet 
+
+1)Amministratore accede al sistema tramite username e password
+2)Il Sistema mostra la pagina di default
+3)L'amministratore sceglie di poter fare un operazione
+4)Il Sistema mostra le operazini possibili
+5)L'amministratore sceglie di modificare una prenotazione
+6)Il sistema mostra i dati precedenti della prenotazione
+7)L'amministratore modifica i dati
+8)Il Sistema mostra i dettagli della prenotazione modificato
+9)L'amministratore prosegue nell'uso del sistema
+
+CASO D'USO 3 - Visione Dati di una Prenotazione
+
+1)Utente accede al sistema tramite username e password
+2)Il Sistema mostra la pagina di default
+3)L'utente sceglie di visualizzare i buffet
+4)Il Sistema mostra le prenotazioni disponibili
+5)L'utente sceglie di visualizzare i dati di una prenotazione
+6)Il Sistema mostra i dati di quella prenotazione
+7)L'utente prosegue nell'uso del sistema
+
+CASO D'USO 4 - Visione Dati di una Prenotazione appartenente a uno Studente
+
+1)Utente accede al sistema tramite username e password 
+2)Il Sistema mostra la pagina di default 
+3)L'utente sceglie di visualizzare le prenotazioniu
+4)Il Sistema mostra le prenotazioni disponibili
+5)L'utente sceglie di visualizzare i dati di una prenotazione
+6)Il Sistema mostra i dati di quella prenotazione
+7)L'utente prosegue nell'uso del sistema

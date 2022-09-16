@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head th:replace="fragments/base.html::headerfiles"></head>
+    <body>
+        <header th:replace="fragments/base.html::intestazione"></header>
+
+        <img class="card-img img-fluid" th:src="@{https://source.unsplash.com/random/1920x1100/?catering}">
+        <div class="card-img-overlay" >
+            <section class="pt-5 pb-5 mt-0 align-items-center d-flex " style="min-height: 100vh;">
+                <div class="container-fluid">
+                    <div class="row  justify-content-center align-items-center d-flex-row text-center h-100">
+                        <div class="col-12 col-md-4 col-lg-3  h-50 ">
+                            <div class="card shadow">
+                                <div class="card-body mx-auto">
+                                    <p class="d-flex justify-content-center">Accesso come amministratore riuscito!</p>
+                                    <div class="d-flex justify-content-center align-items-center" >
+                                        <a class="btn btn-success " th:href="@{/admin/features}">Clicca qui per accedere alle features!</a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </section>
+        </div>
+
+       
+    </body>
+</html>

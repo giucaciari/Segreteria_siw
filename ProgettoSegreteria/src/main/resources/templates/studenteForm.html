@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments/base.html::headerfiles">
+        <link rel="stylesheet" href="../static/css/form.css">
+    </head>
+
+    <body>
+        <header th:replace="fragments/base.html::intestazione"></header>
+        <img class="card-img" th:src="@{https://source.unsplash.com/random/1920x1100/?student}" >
+        <div class="container card-img-overlay">
+            <div class=" text-center mt-5 ">
+        
+                <h1 style="color: rgb(224, 134, 49);font-family: Courgette;"  >Inserimento Studente</h1>
+            </div>
+        
+        
+        <div class="row ">
+          <div class="col-lg-7 mx-auto">
+            <div class="card mt-2 mx-auto p-4 bg-light">
+                <div class="card-body bg-light">
+           
+                <div class = "container">
+                <form id="contact-form" role="form" th:action="@{/admin/studente}" method="POST" th:object="${studente}">
+                    <div th:if="${#fields.hasGlobalErrors()}">
+                        <p th:each="err : ${#fields.globalErrors()}" th:text="${err}">Errore Globale</p>
+                    </div>
+                
+        
+                <div class="controls">
+        
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_name">Nome *</label>
+                                <input id="form_name" type="text" name="name" class="form-control" placeholder="Inserisci il nome dello studente *" required="required" th:field="*{nome}" >
+                                <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_name">Cognome *</label>
+                                <input id="form_name" type="text" name="name" class="form-control" placeholder="Inserisci il cognome dello studente *" required="required" th:field="*{cognome}" >
+                                <span th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="form_year">Anno *</label>
+                                <input id="form_year" type="text" name="year" class="form-control" placeholder="Inserisci l'anno dello studente *" required="required" th:field="*{anno}" >
+                                <span th:if="${#fields.hasErrors('anno')}" th:errors="*{anno}"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+        
+        
+                        <div class="col-md-12">
+                            
+                            <input type="submit" class="btn btn-success btn-send  pt-2 btn-block" value="Submit Studente" >
+                        
+                    </div>
+              
+                    </div>
+        
+        
+            </div>
+             </form>
+            </div>
+                </div>
+        
+        
+        </div>
+            <!-- /.8 -->
+        
+        </div>
+        <!-- /.row-->
+        
+        </div>
+        </div>
+    </body>
+</html>

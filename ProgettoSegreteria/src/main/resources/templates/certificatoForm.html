@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments/base.html::headerfiles">
+        <link rel="stylesheet" href="../static/css/form.css">
+    </head>
+
+    <body>
+        <header th:replace="fragments/base.html::intestazione"></header>
+        <img class="card-img" th:src="@{https://source.unsplash.com/random/1920x1100/?university}" >
+        <div class="container card-img-overlay">
+            <div class=" text-center mt-5 ">
+        
+                <h1 style="color: rgb(224, 134, 49);font-family: Courgette;"  >Inserimento Certificato</h1>
+            </div>
+        
+        
+        <div class="row ">
+          <div class="col-lg-7 mx-auto">
+            <div class="card mt-2 mx-auto p-4 bg-light">
+                <div class="card-body bg-light">
+           
+                <div class = "container">
+                <form id="contact-form" role="form" th:action="@{/admin/certificato}" method="POST" th:object="${certificato}">
+                    <div th:if="${#fields.hasGlobalErrors()}">
+                        <p th:each="err : ${#fields.globalErrors()}" th:text="${err}">Errore Globale</p>
+                    </div>
+                
+        
+                <div class="controls">
+        
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_name">Nome *</label>
+                                <input id="form_name" type="text" name="name" class="form-control" placeholder="Inserisci il nome del certificato *" required="required" th:field="*{nome}" >
+                                <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+                            </div>
+                        </div>
+                        <!--<div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_name">Origine *</label>
+                                <input id="form_name" type="text" name="name" class="form-control" placeholder="Inserisci l'origine dell'ingrediente *" required="required" th:field="*{origine}" >
+                                <span th:if="${#fields.hasErrors('origine')}" th:errors="*{origine}"></span>
+                            </div>
+                            
+                        </div>
+                    </div>-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="form_message">Descrizione *</label>
+                                <textarea th:field="*{descrizione}" id="form_message" name="message" class="form-control" placeholder="Write your description here." rows="4" required="required" ></textarea
+                                    >
+                                    <span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>
+                                </div>
+        
+                            </div>
+
+                           <!-- <div class="col-md-12 ">
+                                <div class="form-group">
+                                    <label for="form_name">Seleziona piatto</label>
+                                    <div th:if="${!piattiDisponibili.empty}">
+                                        <select class="form-select" aria-label="Default select example" th:field="*{piatto}">
+                                            <option th:each="piatto : ${piattiDisponibili}" th:value="${piatto.id}"><span
+                                                    th:text="${piatto.nome}">Nome piatto</span></option>
+                                        </select>
+                                    </div>
+                                    <div th:unless="${!piattiDisponibili.empty}">
+                                        <div class="notification p-3 is-danger">Nessun piatto disponibile!</div>
+                                    </div>
+                                </div>
+                            </div>-->
+
+                            <div class="col-12 mt-3">
+                                <div class="form-group">
+                                    <label for="form_name">Seleziona Esame</label>
+                                    <div th:if="${esamiDisponibili}">
+                                        <select class="form-select" name="EsameScelto" aria-label="Default select example">
+                                            <option th:each="esame : ${esamiDisponibili}" th:value="${esame.id}"><span
+                                                    th:text="${esame.nome}">Nome Esame</span></option>
+                                        </select>
+                                    </div>
+                                    <div th:unless="${esamiDisponibili}">
+                                        <div class="notification p-3 is-danger">Nessun esame disponibile!</div>
+                                    </div>
+                                </div>
+                            </div>
+        
+        
+                        <div class="col-md-12">
+                            
+                            <input type="submit" class="btn btn-success btn-send  pt-2 btn-block
+                                " value="Submit Certificato" >
+                        
+                    </div>
+              
+                    </div>
+        
+        
+            </div>
+             </form>
+            </div>
+                </div>
+        
+        
+        </div>
+            <!-- /.8 -->
+        
+        </div>
+        <!-- /.row-->
+        
+        </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="fragments/base.html::headerfiles"></head>
+  <body>
+    <header th:replace="fragments/base.html::intestazione">
+    </header>
+    <img class="card-img" th:src="@{https://source.unsplash.com/random/1920x1100/?university}" >
+    <div class="card-img-overlay">
+      
+      <h2 class="mt-5" style="text-align: center;color: rgb(224, 134, 49);font-family: Courgette;">Studente Page</h2>
+
+    
+    <div class="jumbotron text-center" style="background-color:rgb(168, 181, 158,.7);">
+      <h1 class="display-4" style="color: rgb(0,0,0);text-transform: uppercase;" th:text="${studente.nome} + ' ' + ${studente.cognome}" >Welcome To My Website!</h1>
+      <p class="lead" style="color: rgb(0,0,0);" th:text="'Anno studente: '+${studente.anno}">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum necessitatibus perspiciatis cum vitae, modi hic?</p>
+      <hr>
+      
+      <h3 class="d-flex justify-content-center" style="color: rgb(24, 23, 23) ;">Prenotazioni di questo studente:</h3>
+            <div class="d-flex flex-row flex-wrap ">
+              <div class="col-4" th:each="prenotazione : ${elencoPrenotazioni}" >
+                <div class="card m-3" style="background-color: rgba(255, 253, 208);" >
+                  <div class="d-flex card-body justify-content-between">
+                    <h3 class="d-inline " th:text="${prenotazione.nome}" style="color: rgb(224, 134, 49);font-family: Courgette;"><strong>Prenotazione</strong></h3>
+                    <!--<p class="card-text" style="color: white;font-family: Indie Flower;" th:text="${buffet.descr}">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+                    <a href="buffet.html" class ="link btn mt-8" style="background-color:#ab9eb5;"
+                    th:href="@{'/prenotazione' + '/' + ${prenotazione.id}}">Dettagli</a>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+            
+
+    </div>
+
+    <br>
+    <footer th:replace="fragments/base.html::footer"></footer>
+  
+  </div>
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="fragments/base.html::headerfiles"></head>
+    <body>
+      <header th:replace="fragments/base.html::intestazione"></header>
+        <img class="card-img img-fluid" th:src="@{https://source.unsplash.com/random/1920x1100/?university}" >
+        <div class=" card-img-overlay">
+            <section class="pt-5 pb-5 mt-0 align-items-center d-flex " style="min-height: 100vh; background-size: cover; ">
+                <div class="container-fluid">
+                  <div class="row  justify-content-center align-items-center d-flex-row text-center h-100">
+                      <div class="col-12 col-md-4 col-lg-3   h-50 ">
+                        <div class="card shadow">
+                            <div class="card-body mx-auto">
+                              <h4 class="card-title mt-3 text-center">Login </h4>
+                              <form th:action="@{/login}" method="POST">
+                                  <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                                    </div>
+                                    <input name="username" class="form-control" placeholder="Username" type="username" required >
+                                  </div>
+                                  <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                    </div>
+                                    <input name="password" class="form-control" placeholder="Insert password" type="password" required >
+                                  </div> 
+                                  <div class="form-group">
+                                    <button type="submit" class="btn  btn-block" style="background-color:#ab9eb5;"> Login </button>
+                                  </div>
+                              </form>
+                            </div>
+                            <div class="field">
+                              <div class="control">
+                                <p class="title is-6 is-info">Non sei ancora registrato?<a th:href="@{/register}">
+                                  Registrati ora</a></p>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                    
+                  </div>
+                </div>
+            </section>
+        </div>
+       
+    </body>
+</html>
